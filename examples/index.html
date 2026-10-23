@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>compact-admin-ui — Fictional examples</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-density="compact">
+  <a class="skip-link" href="#main">Skip to work area</a>
+  <div class="demo-bar">
+    <div class="demo-brand"><strong>compact-admin-ui</strong><span>Fictional examples</span></div>
+    <fieldset class="density-control"><legend class="sr-only">Layout density</legend><button type="button" data-density="spacious" aria-pressed="false">Spacious</button><button type="button" data-density="compact" aria-pressed="true">Compact</button></fieldset>
+  </div>
+  <div class="workspace">
+    <aside class="sidebar">
+      <div class="workspace-name"><span class="workspace-symbol" aria-hidden="true">C</span><span>Cedar workspace<small>Sample operations</small></span></div>
+      <nav aria-label="Example pages"><button type="button" data-view="support" aria-pressed="true">Support desk<span>07</span></button><button type="button" data-view="orders" aria-pressed="false">Order list<span>06</span></button><button type="button" data-view="detail" aria-pressed="false">Record detail</button></nav>
+      <div class="sidebar-note">Made-up records.<br>Changes reset on reload.</div>
+      <a class="source-link" href="../README.md">Skill documentation</a>
+    </aside>
+    <main id="main" tabindex="-1">
+      <header class="page-header"><div class="page-title"><h1 id="page-title">Support desk</h1><span id="page-context">Team queue</span></div><div class="page-actions"><button type="button" id="refresh" class="button">Refresh</button><button type="button" id="primary-action" class="button primary">New request</button></div></header>
+      <section id="summary" class="summary-grid" aria-label="Queue summary"></section>
+      <section id="list-panel" class="panel" aria-label="Records">
+        <div class="panel-heading"><div class="section-title"><h2 id="list-heading">Requests</h2><span id="record-count" role="status" aria-live="polite"></span></div><div class="state-control"><label for="state-preview">Preview state</label><select id="state-preview"><option value="normal">Normal</option><option value="loading">Loading</option><option value="empty">Empty</option><option value="error">Error</option></select></div></div>
+        <div class="toolbar"><label class="search-field"><span class="sr-only">Search records</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4 4"></path></svg><input id="search" type="search" placeholder="Search requests" autocomplete="off"></label><label class="filter-field"><span class="sr-only">Filter by status</span><select id="status-filter"></select></label><div class="bulk-actions"><span id="selected-count"></span><button type="button" id="bulk-assign" class="button" disabled>Assign selected</button></div></div>
+        <div id="table-region" class="table-region" role="region" aria-label="Records table" tabindex="0"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+        <div id="table-state" class="table-state" hidden></div>
+        <footer class="panel-footer"><span id="list-note">All sample records are shown.</span><span>Local demo</span></footer>
+      </section>
+      <section id="detail-panel" class="detail-layout" aria-label="Record detail" hidden></section>
+      <footer class="page-footer"><span>All names and data are fictional.</span><span>Self-contained HTML, CSS and JavaScript</span></footer>
+    </main>
+  </div>
+  <dialog id="record-dialog" class="record-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><div><span id="dialog-context" class="secondary"></span><h2 id="dialog-title">Record details</h2></div><button type="button" class="button icon-button" id="close-dialog" aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button></div><div id="dialog-body"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

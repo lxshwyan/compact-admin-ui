@@ -1,0 +1,6 @@
+interface:
+  display_name: "Compact Admin UI"
+  short_description: "Compact, readable business interfaces and work tables"
+  default_prompt: "Use $compact-admin-ui to improve this business interface while preserving its existing components and behavior."
+policy:
+  allow_implicit_invocation: false
